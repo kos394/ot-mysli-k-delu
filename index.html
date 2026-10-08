@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>От мысли к делу: путь мастера</title>
+    <meta name="description" content="Как мастер меняет жизнь, мышление и мотивацию. Честный путь: от размышлений к действию. Без курсов и волшебных таблеток.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #1a1208;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(120, 80, 30, 0.3) 0%, transparent 70%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.12"/></svg>');
+            font-family: 'PT Serif', Georgia, serif;
+            line-height: 1.9;
+            padding: 40px 20px;
+            min-height: 100vh;
+            color: #3a2412;
+        }
+
+        .scroll {
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+            background:
+                linear-gradient(180deg, rgba(255, 240, 200, 0.94) 0%, rgba(245, 225, 180, 0.96) 50%, rgba(235, 210, 165, 0.94) 100%);
+            padding: 70px 60px 80px;
+            box-shadow:
+                0 0 0 1px #8b6b3d,
+                0 0 0 3px #c4a87a,
+                0 0 0 5px #8b6b3d,
+                0 25px 70px rgba(0, 0, 0, 0.8),
+                inset 0 0 100px rgba(139, 100, 40, 0.15);
+            border-radius: 4px;
+        }
+
+        .scroll::after {
+            content: "";
+            position: absolute;
+            left: -20px; right: -20px; top: -12px; bottom: -12px;
+            pointer-events: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #4a2a10, #8b6b3d 8%, #c4a87a 15%, #8b6b3d 22%, #4a2a10 30%, #4a2a10 70%, #8b6b3d 78%, #c4a87a 85%, #8b6b3d 92%, #4a2a10);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        h1 {
+            font-family: 'Marck Script', cursive;
+            font-size: 3.8rem;
+            text-align: center;
+            color: #6b1e1e;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 rgba(139, 107, 61, 0.3);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #8b2e2e;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-family: 'Marck Script', cursive;
+        }
+
+        .divider {
+            text-align: center;
+            color: #b89a5a;
+            font-size: 1.6rem;
+            margin: 35px 0;
+            letter-spacing: 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            text-indent: 2em;
+            line-height: 1.9;
+        }
+
+        p.dropcap { text-indent: 0; }
+
+        p.dropcap::first-letter {
+            font-family: 'Marck Script', cursive;
+            font-size: 5.5rem;
+            float: left;
+            line-height: 0.8;
+            padding: 10px 16px 0 0;
+            color: #8b2e2e;
+            text-shadow: 2px 2px 0 rgba(139, 107, 61, 0.4);
+        }
+
+        .pain {
+            background: rgba(139, 46, 46, 0.08);
+            border-left: 5px solid #8b2e2e;
+            padding: 30px 35px;
+            margin: 40px 0;
+            font-size: 1.35rem;
+            line-height: 2;
+            color: #4a1a1a;
+            font-style: italic;
+        }
+
+        .pain strong { font-style: normal; color: #6b1e1e; }
+
+        h2 {
+            font-family: 'Marck Script', cursive;
+            font-size: 2.8rem;
+            color: #6b1e1e;
+            text-align: center;
+            margin: 60px 0 30px;
+            letter-spacing: 1px;
+        }
+
+        h2::before, h2::after {
+            content: "✦";
+            color: #b89a5a;
+            margin: 0 20px;
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        .story {
+            background: rgba(196, 168, 122, 0.12);
+            border: 2px solid #c4a87a;
+            padding: 35px 40px;
+            margin: 35px 0;
+            border-radius: 3px;
+        }
+
+        .story p {
+            font-size: 1.25rem;
+            text-indent: 0;
+            margin-bottom: 18px;
+        }
+
+        .story p:last-child { margin-bottom: 0; }
+
+        .fact {
+            background: rgba(139, 107, 61, 0.15);
+            border-left: 5px solid #8b6b3d;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-size: 1.3rem;
+            color: #5a3e1a;
+            line-height: 2;
+        }
+
+        .fact strong { color: #8b2e2e; }
+
+        .quote {
+            text-align: center;
+            font-family: 'Marck Script', cursive;
+            font-size: 2rem;
+            color: #6b1e1e;
+            margin: 50px 20px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .quote::before, .quote::after {
+            content: "❧";
+            color: #b89a5a;
+            font-size: 1.8rem;
+            display: block;
+            margin: 15px 0;
+        }
+
+        .cta-block {
+            text-align: center;
+            margin: 60px 0 30px;
+            padding: 40px 30px;
+            background: rgba(107, 30, 30, 0.06);
+            border: 2px dashed #8b6b3d;
+        }
+
+        .cta-block p {
+            text-indent: 0;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #6b1e1e;
+            color: #f4e8d1;
+            text-decoration: none;
+            font-family: 'PT Serif', serif;
+            font-size: 1.3rem;
+            border: 3px solid #3a0e0e;
+            box-shadow: 5px 5px 0 #3a0e0e;
+            transition: all 0.15s;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background: #8b2e2e;
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0 #3a0e0e;
+        }
+
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .steps li {
+            padding: 20px 25px 20px 60px;
+            position: relative;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            background: rgba(196, 168, 122, 0.12);
+            border-left: 4px solid #8b6b3d;
+            line-height: 1.7;
+        }
+
+        .steps li::before {
+            content: "✦";
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            color: #8b2e2e;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #c4a87a;
+            text-align: center;
+            color: #5a3e1a;
+            font-size: 1rem;
+        }
+
+        footer .verse {
+            font-family: 'Marck Script', cursive;
+            font-size: 1.5rem;
+            color: #8b2e2e;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #6b1e1e;
+            text-decoration: none;
+            border-bottom: 1px dotted #6b1e1e;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 15px 10px; }
+            .scroll { padding: 45px 25px 55px; }
+            .scroll::after { left: -10px; right: -10px; }
+            h1 { font-size: 2.4rem; }
+            .subtitle { font-size: 1.1rem; }
+            h2 { font-size: 2rem; }
+            p { font-size: 1.1rem; text-indent: 1.5em; }
+            p.dropcap::first-letter { font-size: 3.8rem; }
+            .pain { font-size: 1.15rem; padding: 20px 22px; }
+            .fact { font-size: 1.1rem; }
+            .quote { font-size: 1.5rem; }
+            .btn { font-size: 1.1rem; padding: 15px 35px; }
+            .steps li { font-size: 1.05rem; padding: 15px 18px 15px 45px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll">
+
+    <h1>От мысли к делу</h1>
+    <p class="subtitle">Путь мастера: как меняется жизнь, мышление и мотивация</p>
+
+    <div class="divider">✦ ❦ ✦</div>
+
+    <p class="dropcap">Ты умеешь делать руками. Строить. Варить. Чинить. Ремонтировать. Но денег от этого — кот наплакал. Знакомо?</p>
+
+    <p>Ты смотришь на других, у кого получилось. Ты думаешь: «У них свой путь. А я... я просто умею работать руками. И всё.»</p>
+
+    <div class="pain">
+        <strong>Стоп.</strong> Хватит себя жалеть. Ты не неудачник. Ты просто ещё не понял одну вещь: <strong>твой навык — это капитал.</strong> Но капитал должен работать. А он у тебя лежит мёртвым грузом.
+    </div>
+
+    <p>Я не буду рассказывать про «пассивный доход» и «инвестиции». Я не буду обещать миллион через месяц. Я расскажу, как сам начал зарабатывать руками. Без курсов. Без бюджета. С ноутбуком, купленным на последние деньги.</p>
+
+    <div class="divider">✦ ❦ ✦</div>
+
+    <h2>Что меняется на этом пути</h2>
+
+    <p>Это не просто «начать зарабатывать». Это путь, на котором меняется всё:</p>
+
+    <ul class="steps">
+        <li><strong>Мышление.</strong> Ты перестаёшь ждать. Начинаешь делать. Понимаешь, что «подходящий момент» — это сейчас.</li>
+        <li><strong>Жизнь.</strong> Появляются первые заказы. Потом вторые. Потом третьи. Ты видишь, что твои руки реально кормят.</li>
+        <li><strong>Мотивация.</strong> Она приходит не из видео на ютубе. Она приходит, когда ты сам видишь результат своего труда.</li>
+    </ul>
+
+    <div class="quote">
+        «Мотивация — это не то, что ты получаешь. Это то, что ты создаёшь сам.»
+    </div>
+
+    <div class="divider">✦ ❦ ✦</div>
+
+    <h2>Как это было у меня</h2>
+
+    <div class="story">
+        <p>Пять лет я сидел за рулём такси. Думал: «Вот заработаю, тогда...» Потом. Потом. Потом. <strong>Пять лет.</strong> Ушли в никуда.</p>
+        <p>Долги росли. Счета арестовали. Жена, двое детей. Дом недостроен. Я смотрел в стену и не понимал: как вылезти?</p>
+        <p>А потом купил ноутбук за 8 тысяч. Последние деньги. Не знал, зачем. Просто чувствовал: надо что-то менять. Начал разбираться. Сначала сделал сайт про свою боль. Потом понял: это не то. Сделал второй — про дело.</p>
+        <p>И тут пошли заказы. Сначала мелкие. Потом два заказа по 25 тысяч за два дня. Я офигел. Я понял: <strong>работает.</strong></p>
+    </div>
+
+    <div class="fact">
+        <strong>Честно:</strong> Я не программист и не маркетолог. Я просто мастер — варю, строю, чиню. Сайт сделал сам, бесплатно, за три месяца. Заказы пока идут с Авито. Но сайт — это моя витрина, которая работает 24 часа. И она уже даёт доверие клиентов.
+    </div>
+
+    <div class="divider">✦ ❦ ✦</div>
+
+    <h2>Что делать прямо сейчас</h2>
+
+    <p>Я не дам тебе «10 шагов к успеху». Я дам тебе <strong>один шаг</strong>. Сегодня.</p>
+
+    <ul class="steps">
+        <li><strong>Открой Авито.</strong> Зарегистрируйся. Напиши объявление. Даже коряво. Даже с одним фото.</li>
+        <li><strong>Сделай первый заказ.</strong> Даже если он не такой, как ты представлял. Опыт приходит тогда, когда ты что-то делаешь. Даже если не получается.</li>
+        <li><strong>Сделай свой сайт.</strong> Бесплатно, на GitHub. Просто витрина. Кто ты, что делаешь, как связаться.</li>
+        <li><strong>Не сдавайся, когда тишина.</strong> Пусть не сразу. Я два недели ждал первый заказ. Но он пришёл. И второй пришёл. И третий.</li>
+    </ul>
+
+    <div class="pain">
+        <strong>Запомни:</strong> ты можешь стать успешным. Не «блогером», не «мотивационным спикером», не кем-то другим. А именно <strong>мастером, у которого есть заказы, доход и своё дело.</strong> Для этого не нужно никому ничего доказывать. Нужно просто начать делать — с того, что умеешь. Сейчас.
+    </div>
+
+    <div class="divider">✦ ❦ ✦</div>
+
+    <div class="cta-block">
+        <p>Если ты устал ждать.<br>Если ты хочешь что-то поменять.<br>Если ты готов начать — <strong>начни сейчас.</strong></p>
+        <a href="#contact" class="btn">Начать →</a>
+    </div>
+
+    <div class="quote">
+        «От мысли к делу — один шаг. Но этот шаг меняет всё.»
+    </div>
+
+    <footer>
+        <p class="verse">«Плоды приходят не сразу. Но если не сдаваться — они придут.»</p>
+        <p>© 2026 От мысли к делу | Путь мастера</p>
+        <p style="margin-top: 15px;"><a href="https://master-bratsk.ru">Мой основной сайт: master-bratsk.ru</a></p>
+    </footer>
+
+</div>
+
+</body>
+</html>
